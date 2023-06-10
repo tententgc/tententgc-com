@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Astro v1.9.2">
+
+<!-- Primary Meta Tags -->
+<link rel="canonical" href="https://astro-portfolio-uzair.vercel.app/">
+<title>Portfolio - Thanyapisit Buaprakhong</title>
+<meta name="title" content="Portfolio - Thanyapisit Buaprakhong">
+<meta name="description" content="A dynamic 20-year-old Computer Science student with a profound interest in Artificial Intelligence and web programming. Currently working as a Software Engineer at CMSK, where I harness my technical abilities to drive innovation and efficiency. Passionate about harnessing the power of technology to create effective solutions, with a strong foundation in various programming languages and AI models. Known for my problem-solving skills and ability to think outside the box, I strive to improve and expand my knowledge in this ever-evolving field.
+  ">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://astro-portfolio-uzair.vercel.app/">
+<meta property="og:title" content="Portfolio - Thanyapisit Buaprakhong">
+<meta property="og:description" content="A dynamic 20-year-old Computer Science student with a profound interest in Artificial Intelligence and web programming. Currently working as a Software Engineer at CMSK, where I harness my technical abilities to drive innovation and efficiency. Passionate about harnessing the power of technology to create effective solutions, with a strong foundation in various programming languages and AI models. Known for my problem-solving skills and ability to think outside the box, I strive to improve and expand my knowledge in this ever-evolving field.
+  ">
+<meta property="og:image" content="https://astro-portfolio-uzair.vercel.app/assets/images/profile.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://astro-portfolio-uzair.vercel.app/">
+<meta property="twitter:title" content="Portfolio - Thanyapisit Buaprakhong">
+<meta property="twitter:description" content="A dynamic 20-year-old Computer Science student with a profound interest in Artificial Intelligence and web programming. Currently working as a Software Engineer at CMSK, where I harness my technical abilities to drive innovation and efficiency. Passionate about harnessing the power of technology to create effective solutions, with a strong foundation in various programming languages and AI models. Known for my problem-solving skills and ability to think outside the box, I strive to improve and expand my knowledge in this ever-evolving field.
+  ">
+<meta property="twitter:image" content="https://astro-portfolio-uzair.vercel.app/assets/images/profile.png">
+
+<!-- preload assests -->
+<link rel="preload" href="/assets/fonts/Inter/Inter-Light.ttf" as="font" crossorigin>
+<link rel="preload" href="/assets/fonts/Outfit/Outfit-SemiBold.ttf" as="font" crossorigin>
+
+  <link rel="stylesheet" href="/assets/index.66293634.css" /></head>
+
+  <body>
+    <header class="container flex items-center justify-between h-[80px] sm:h-[123px]">
+  <a class="text-2xl dark:text-light font-semibold dark:font-semibold font-outfit" href="/">TB.
+  </a>
+  <nav>
+    <ul class="flex items-center">
+      <li>
+        <a class="p-4 dark:text-light block text-lg" href="/projects">Projects</a>
+      </li>
+      <!-- <li>
+        <a class="p-4 dark:text-light block text-lg" href="/contact">Contact</a>
+      </li> -->
+      <li>
+        <button aria-label="theme-button" id="theme-button" class="dark:text-light rounded-lg p-4 ml-2 bg-slate-100 dark:bg-[#202020]"></button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+  const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const themeButton = document.getElementById("theme-button");
+  const browserTheme = document.querySelector('[name="theme-color"]');
+  let isDark;
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    isDark = true;
+    themeButton.innerHTML = moon;
+    browserTheme.content = "#FFFFFF";
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+    isDark = false;
+    themeButton.innerHTML = sun;
+    browserTheme.content = "#111111";
+  }
+  window.localStorage.setItem("theme", theme);
+
+  const darkModeHandler = () => {
+    if (isDark) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.theme = "dark";
+      isDark = false;
+      themeButton.innerHTML = sun;
+      browserTheme.content = "#111111";
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.theme = "light";
+      isDark = true;
+      themeButton.innerHTML = moon;
+      browserTheme.content = "#FFFFFF";
+    }
+  };
+
+  themeButton.addEventListener("click", darkModeHandler);
+</script>
+<main class="container">
+  <section>
+  <p class="dark:text-light mt-[117px]">Hey, I’m</p>
+  <h1>Thanyapisit Buaprakhong</h1>
+  <p class="dark:text-light text-lg mb-16">
+    A dynamic 20-year-old Computer Science student with a profound interest in Artificial Intelligence and web programming. Currently working as a Software Engineer at CMSK, where I harness my technical abilities to drive innovation and efficiency. Passionate about harnessing the power of technology to create effective solutions, with a strong foundation in various programming languages and AI models. Known for my problem-solving skills and ability to think outside the box, I strive to improve and expand my knowledge in this ever-evolving field.
+  
+  </p>
+</section><section class="flex items-start justify-between flex-col sm:flex-row dark:text-light">
+  <h2 class="w-[15rem] mt-16">EXPERIENCE</h2>
+  <div class="w-full">
+    <div class="my-16">
+          <div class="flex justify-between items-center flex-wrap">
+            <h3 class="text-xl font-semibold">Fulltime Artificial Intelligence Engineer, CMSK</h3>
+            <p class="text-sm dark:text-gray">
+              Apr 2023 - Present
+            </p>
+          </div>
+          <p class="text-sm mt-3 text-blue">Bangkok, Thailand</p>
+          <ul class="mt-3">
+            <li class="dark:text-gray">- Chatbot Fine-tuning: I actively engage in fine-tuning the chatbot&#39;s natural language understanding (NLU) capabilities, aiming to improve its accuracy and efficiency in processing user queries This involves analyzing chatbot conversations, identifying patterns, and implementing necessary adjustments to optimize its responses.</li><li class="dark:text-gray">- Quality Assurance: I meticulously test the chatbot&#39;s performance across various scenarios and user interactions to ensure its reliability and consistency. This includes conducting systematic testing, detecting and resolving errors or inconsistencies, and documenting issues for further development and improvement.</li><li class="dark:text-gray">- Collaboration: I work closely with cross-functional teams, including developers, designers, and product managers, to understand business requirements and align chatbot functionalities with organizational goals.</li><li class="dark:text-gray">- Research: I conduct research on the latest trends and developments in the field of AI and chatbot technology to identify opportunities for improvement and innovation.</li>
+          </ul>
+        </div><div class="my-16">
+          <div class="flex justify-between items-center flex-wrap">
+            <h3 class="text-xl font-semibold">Apprentice Artificial Intelligence Engineer, Super AI Engineer Season3</h3>
+            <p class="text-sm dark:text-gray">
+              Nov 2022 - Present
+            </p>
+          </div>
+          <p class="text-sm mt-3 text-blue">Bangkok, Thailand</p>
+          <ul class="mt-3">
+            <li class="dark:text-gray">Advanced AI training course (Applied Level) attending workshops (Online &amp; Onsite) Planning, design, analysis, system building and soft skills, group and individual work.to enhance knowledge skills and experience Solving AI problems from the real problems of the organization Emphasis on knowledge and ability to Training is divided into 5 areas as follows: </li><li class="dark:text-gray">- Image processing</li><li class="dark:text-gray">- Signal processing</li><li class="dark:text-gray">- Natural language processing/understanding</li><li class="dark:text-gray">- Big Data Analytics</li><li class="dark:text-gray">- Internet of Things and robotics</li>
+          </ul>
+        </div><div class="my-16">
+          <div class="flex justify-between items-center flex-wrap">
+            <h3 class="text-xl font-semibold">Google Developer Student Club KMUTT</h3>
+            <p class="text-sm dark:text-gray">
+              Aug 2021 - Present
+            </p>
+          </div>
+          <p class="text-sm mt-3 text-blue">Bangkok, Thailand</p>
+          <ul class="mt-3">
+            <li class="dark:text-gray">Developer Student Clubs! As a member, you&#39;ll gain access to a global network of students who are passionate about using technology to solve real-world problems. You&#39;ll have the opportunity to learn from industry experts, participate in hands-on workshops, and build projects that will help you hone your skills and stand out to potential employers. Don&#39;t miss out on this amazing opportunity to kickstart your career in tech!</li>
+          </ul>
+        </div><div class="my-16">
+          <div class="flex justify-between items-center flex-wrap">
+            <h3 class="text-xl font-semibold">Working scholarship student, KMUTT</h3>
+            <p class="text-sm dark:text-gray">
+              Sep 2022 - May 2023
+            </p>
+          </div>
+          <p class="text-sm mt-3 text-blue">Bangkok, Thailand</p>
+          <ul class="mt-3">
+            <li class="dark:text-gray">Working Scholarship is work on Teacher Assistant is subject Css 112 Computer Programming and Make new platform for Mathematic Research Database for Mathematics Department in 2022 -2023</li>
+          </ul>
+        </div>
+  </div>
+</section><section class="flex items-start justify-between flex-col sm:flex-row dark:text-light">
+  <h2 class="w-[15rem] mt-16">EDUCATION</h2>
+  <div class="w-full">
+    <div class="my-16">
+          <div class="flex justify-between items-center flex-wrap">
+            <h3 class="text-xl font-semibold">King Mongkut&#39;s University of Technology Thonburi (KMUTT)</h3>
+            <p class="text-sm dark:text-gray">
+              2021 - 2025
+            </p>
+          </div>
+          <p class="text-sm mt-3 text-blue">Bangkok Thailand</p>
+          <ul class="mt-3">
+            <li class="dark:text-gray">Computer Science, Faculty of Science</li>
+          </ul>
+        </div><div class="my-16">
+          <div class="flex justify-between items-center flex-wrap">
+            <h3 class="text-xl font-semibold">Princess Chulabhorn&#39;s Science High School Pathum Thani</h3>
+            <p class="text-sm dark:text-gray">
+              2015 - 2021
+            </p>
+          </div>
+          <p class="text-sm mt-3 text-blue">Pathum Thani, Thailand</p>
+          <ul class="mt-3">
+            <li class="dark:text-gray">Science , Mathematics and Technology</li>
+          </ul>
+        </div>
+  </div>
+</section><section>
+        <h2 class="w-[15rem] dark:text-light mt-16">FEATURE PROJECTS</h2>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-4 my-16">
+  <article class="w-full max-h-[25rem] overflow-hidden relative group">
+  <div class="flex items-center absolute right-4 top-4 z-10">
+    <a href="https://github.com/tententgc/watchstock-main" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+    <a href="https://watchstock-main.vercel.app/" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md ml-1" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link-2">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </a>
+  </div>
+  <a href="https://watchstock-main.vercel.app/" target="_blank">
+    <img src="/assets/images/watchstock.png" class="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]" loading="lazy" width="100%" height="100%" alt="featureImage">
+  </a>
+  <div class="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700">
+    <h3 class="mr-2 text-xl">WatchStock</h3>
+  </div>
+</article><article class="w-full max-h-[25rem] overflow-hidden relative group">
+  <div class="flex items-center absolute right-4 top-4 z-10">
+    <a href="https://github.com/tententgc/tsp-network" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+    <a href="https://github.com/tententgc/tsp-network" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md ml-1" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link-2">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </a>
+  </div>
+  <a href="https://github.com/tententgc/tsp-network" target="_blank">
+    <img src="/assets/images/node1.png" class="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]" loading="lazy" width="100%" height="100%" alt="featureImage">
+  </a>
+  <div class="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700">
+    <h3 class="mr-2 text-xl">tsp-network</h3>
+  </div>
+</article><article class="w-full max-h-[25rem] overflow-hidden relative group">
+  <div class="flex items-center absolute right-4 top-4 z-10">
+    <a href="https://github.com/tententgc/k8s-todolist" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+    <a href="http://20.44.251.80/" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md ml-1" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link-2">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </a>
+  </div>
+  <a href="http://20.44.251.80/" target="_blank">
+    <img src="/assets/images/k8s.png" class="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]" loading="lazy" width="100%" height="100%" alt="featureImage">
+  </a>
+  <div class="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700">
+    <h3 class="mr-2 text-xl">k8s Todolist</h3>
+  </div>
+</article><article class="w-full max-h-[25rem] overflow-hidden relative group">
+  <div class="flex items-center absolute right-4 top-4 z-10">
+    <a href="https://github.com/tententgc/tententgc.com" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+    <a href="https://oldpage.tententgc.com/" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md ml-1" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link-2">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </a>
+  </div>
+  <a href="https://oldpage.tententgc.com/" target="_blank">
+    <img src="/assets/images/tententgc-com.png" class="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]" loading="lazy" width="100%" height="100%" alt="featureImage">
+  </a>
+  <div class="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700">
+    <h3 class="mr-2 text-xl">old : tententgc.com</h3>
+  </div>
+</article><article class="w-full max-h-[25rem] overflow-hidden relative group">
+  <div class="flex items-center absolute right-4 top-4 z-10">
+    <a href="https://github.com/tententgc/astro-portfolio" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+    <a href="https://tententgc.com/" class="text-white p-3 bg-black/50 rounded-full backdrop-blur-md ml-1" aria-label="Social Media" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link-2">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </a>
+  </div>
+  <a href="https://tententgc.com/" target="_blank">
+    <img src="/assets/images/tententgc.png" class="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]" loading="lazy" width="100%" height="100%" alt="featureImage">
+  </a>
+  <div class="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700">
+    <h3 class="mr-2 text-xl">tententgc.com</h3>
+  </div>
+</article>
+</div>
+      </section>
+</main>
+<footer class="container flex sm:flex-row flex-col justify-between items-center mb-8 sm:mb-4">
+  <p class="dark:text-light text-right my-8">
+    Developed by <strong>tententgc</strong>
+  </p>
+  <div class="grid grid-cols-5 gap-4">
+    <a aria-label="Social Media" href="https://twitter.com/tentenTGC" target="_blank" class="footer-icons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+      </svg>
+    </a>
+    <a aria-label="Social Media" href="https://github.com/tententgc" target="_blank" class="footer-icons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+      </svg>
+    </a>
+    <a aria-label="Social Media" href="https://www.linkedin.com/in/thanyapisit-buaprakhong-bb0143184/" target="_blank" class="footer-icons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+      </svg>
+    </a>
+    <a aria-label="Social Media" href="thanyapisit.bua@gmail.com" target="_blank" class="footer-icons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    </a>
+    <a aria-label="Social Media" href="https://www.facebook.com/tentenTGC/" target="_blank" class="footer-icons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+      </svg>
+    </a>
+  </div>
+</footer>
+  </body></html>
