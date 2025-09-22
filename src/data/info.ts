@@ -7,31 +7,61 @@ export const info = {
 
   experience: [
     {
-      name: "Fulltime Artificial Intelligence Engineer, CMSK",
-      location: "Bangkok, Thailand", 
-      startDate: "Apr 2023",
-      endDate: "Present",
-      description: [
-        "- Chatbot Fine-tuning: I actively engage in fine-tuning the chatbot's natural language understanding (NLU) capabilities, aiming to improve its accuracy and efficiency in processing user queries This involves analyzing chatbot conversations, identifying patterns, and implementing necessary adjustments to optimize its responses.",
-        "- Quality Assurance: I meticulously test the chatbot's performance across various scenarios and user interactions to ensure its reliability and consistency. This includes conducting systematic testing, detecting and resolving errors or inconsistencies, and documenting issues for further development and improvement.",
-        "- Collaboration: I work closely with cross-functional teams, including developers, designers, and product managers, to understand business requirements and align chatbot functionalities with organizational goals.",
-        "- Research: I conduct research on the latest trends and developments in the field of AI and chatbot technology to identify opportunities for improvement and innovation.",
-      ],
+      "name": "Data Scientist Internship - InnovestX (Subsidiary of SCBX)",
+      "location": "Bangkok, Thailand",
+      "startDate": "2025",
+      "endDate": "Present",
+      "description": [
+        "- Specialized in user behavior analytics to extract meaningful insights from complex data",
+        "- Focused on financial data modeling including classification and predictive forecasting",
+        "- Applied LLM and Retrieval-Augmented Generation (RAG) techniques to enhance intelligent systems in the investment domain"
+      ]
     },
-
     {
-      name: "Apprentice Artificial Intelligence Engineer, Super AI Engineer Season3", 
-      location: "Bangkok, Thailand", 
-      startDate: "Nov 2022",
-      endDate: "Present",
-      description: [
-        "Advanced AI training course (Applied Level) attending workshops (Online & Onsite) Planning, design, analysis, system building and soft skills, group and individual work.to enhance knowledge skills and experience Solving AI problems from the real problems of the organization Emphasis on knowledge and ability to Training is divided into 5 areas as follows: ",
-        "- Image processing",
-        "- Signal processing",
-        "- Natural language processing/understanding",
-        "- Big Data Analytics",
-        "- Internet of Things and robotics",
-      ],
+      "name": "Researcher Internship - MIT UrbanRiskLab",
+      "location": "Bangkok, Thailand",
+      "startDate": "2023",
+      "endDate": "2025",
+      "description": [
+        "- Developed computer vision systems and advanced models",
+        "- Built time-series forecasting systems",
+        "- Implemented a Vision Question Answering (VQA) system",
+        "- Created a geospatial product mapping platform",
+        "- Designed and deployed dynamic websites"
+      ]
+    },
+    {
+      "name": "Cyber Security Analyst - INCA Internet",
+      "location": "Bangkok, Thailand",
+      "startDate": "2024",
+      "endDate": "2024",
+      "description": [
+        "- Designed and analyzed end-to-end system workflow",
+        "- Developed a phishing detection system"
+      ]
+    },
+    {
+      "name": "AI Engineer & Frontend Engineer - Artificial Intelligence Association of Thailand",
+      "location": "Bangkok, Thailand",
+      "startDate": "2023",
+      "endDate": "2024",
+      "description": [
+        "- Developed and designed frontend of SuperAI MOOC learning platform (https://mooc.aiat.or.th)",
+        "- Developed, trained, and validated machine learning models based on user requirements and data availability",
+        "- Experimented with different algorithms and techniques to optimize model performance"
+      ]
+    },
+    {
+      "name": "Junior Developer - CMSK (Center of Money Skill)",
+      "location": "Bangkok, Thailand",
+      "startDate": "2023",
+      "endDate": "2023",
+      "description": [
+        "- Fine-tuned Large Language Models (LLMs) for domain-specific tasks",
+        "- Developed state-of-the-art Retrieval-Augmented Generation (RAG) systems and Agentic AI",
+        "- Designed and implemented an OCR (Optical Character Recognition) processing pipeline",
+        "- Built a user behavior analytics and recommendation system"
+      ]
     },
 
     {
