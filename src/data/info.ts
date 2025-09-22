@@ -1,8 +1,8 @@
 export const info = {
   baseUrl: "https://astro-portfolio-uzair.vercel.app",
   name: "Thanyapisit Buaprakhong",
-  jobDescription: "Web Developer",
-  about: `A dynamic 20-year-old Computer Science student with a profound interest in Artificial Intelligence and web programming. Currently working as a Software Engineer at CMSK, where I harness my technical abilities to drive innovation and efficiency. Passionate about harnessing the power of technology to create effective solutions, with a strong foundation in various programming languages and AI models. Known for my problem-solving skills and ability to think outside the box, I strive to improve and expand my knowledge in this ever-evolving field.
+  jobDescription: "Research and AI Engineer",
+  about: `I am an AI and Research Engineer passionate about bridging advanced research with practical applications, specializing in computer vision, natural language processing, and retrieval-augmented generation (RAG). With experience in developing low-code AI pipelines, fine-tuning large language models, and building scalable systems for real-world use, I thrive at the intersection of innovation and engineering—transforming complex ideas into impactful solutions that empower industries and people alike.
   `,
 
   experience: [
